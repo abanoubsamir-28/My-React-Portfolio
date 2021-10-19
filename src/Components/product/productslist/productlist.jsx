@@ -14,7 +14,7 @@ function ProductlistComponent() {
   return (
     <div className="d-flex justify-content-center">
       {products ? (
-        <section>
+        <section >
           <div className="carousel my-5">
             <ControlledCarousel
               productsList={products}
@@ -27,6 +27,7 @@ function ProductlistComponent() {
                 return (
                   <ProductcardComponent
                     productItem={product}
+                    key={product.id}
                   ></ProductcardComponent>
                 );
               })}

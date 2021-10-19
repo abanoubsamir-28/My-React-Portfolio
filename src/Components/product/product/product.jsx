@@ -10,8 +10,8 @@ function ProductComponent(match) {
     fetch(`https://fakestoreapi.com/products/${producId}`)
       .then((res) => res.json())
       .then((json) => setproduct(json));
-    console.log(product);
-  }, []);
+    
+  });
 
   return (
     <div className="d-flex justify-content-center">
@@ -22,17 +22,27 @@ function ProductComponent(match) {
               <h2 className="my-4">{product.title}</h2>
               <p className="text-capitalize text-muted">{product.category}</p>
               <p className="py-4 w-75">{product.description}</p>
-               <TextRating rate={product.rating.rate}></TextRating> 
-               <span>By {product.rating.count} User</span> 
-               <h4 className="my-5">Prdocut Price : {Math.ceil(product.price) + " EGP"}</h4>
+              <TextRating
+                rate={product.rating.rate}
+                key={product.id}
+              ></TextRating>
+              <span>By {product.rating.count} User</span>
+              <h4 className="my-5">
+                Prdocut Price : {Math.ceil(product.price) + " EGP"}
+              </h4>
             </div>
             <figure className="w-25">
-              <img src={product.image} className="w-100 my-5" />
+              <img src={product.image} className="w-100 my-5" alt="..." />
             </figure>
           </div>
         </section>
       ) : (
-        <Spinner animation="border" role="status" variant="primary" className="p-5">
+        <Spinner
+          animation="border"
+          role="status"
+          variant="primary"
+          className="p-5"
+        >
           <span className="visually-hidden">Loading...</span>
         </Spinner>
       )}
