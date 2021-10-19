@@ -15,7 +15,6 @@ import HomeComponent from './Components/Home/home';
 
 function App() {
   return (
-    <> 
       <Router>
       <NavbarComponent/>
       <Switch>
@@ -27,7 +26,6 @@ function App() {
       </Switch>
       <FooterComponent/>
       </Router>
-    </>
   );
 }
 

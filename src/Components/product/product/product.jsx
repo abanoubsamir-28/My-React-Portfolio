@@ -5,7 +5,7 @@ import "./product.css";
 
 function ProductComponent(match) {
   const producId = match.match.params.id;
-  const [product, setproduct] = useState({});
+  const [product, setproduct] = useState(null);
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${producId}`)
       .then((res) => res.json())
@@ -14,7 +14,7 @@ function ProductComponent(match) {
   }, []);
 
   return (
-    <div>
+    <div className="d-flex justify-content-center">
       {product ? (
         <section className="product m-3 vh-50 bg-dark">
           <div className="container d-flex">
@@ -22,10 +22,8 @@ function ProductComponent(match) {
               <h2 className="my-4">{product.title}</h2>
               <p className="text-capitalize text-muted">{product.category}</p>
               <p className="py-4 w-75">{product.description}</p>
-              {/* Bugs to Fix Tommorow Lab */}
-               {/* <TextRating rate={product.rating.rate}></TextRating> 
-               <span>By {product.rating.count} User</span> */}
-               {/* End Bugs */}
+               <TextRating rate={product.rating.rate}></TextRating> 
+               <span>By {product.rating.count} User</span> 
                <h4 className="my-5">Prdocut Price : {product.price + " EGP"}</h4>
             </div>
             <figure className="w-25">
@@ -34,7 +32,7 @@ function ProductComponent(match) {
           </div>
         </section>
       ) : (
-        <Spinner animation="border" role="status" variant="primary">
+        <Spinner animation="border" role="status" variant="primary" className="p-5">
           <span className="visually-hidden">Loading...</span>
         </Spinner>
       )}
