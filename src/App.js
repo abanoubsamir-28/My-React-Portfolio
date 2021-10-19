@@ -18,11 +18,11 @@ function App() {
       <Router>
       <NavbarComponent/>
       <Switch>
-        <Route path="/" exact component={HomeComponent} />
-        <Route path="/login" component={LoginComponent} />
-        <Route path="/register" component={RegisterComponent} />
-        <Route path="/shop" component={ProductlistComponent} />
-        <Route path="/product/:id" component={ProductComponent} />
+          <Route path="/" exact component={HomeComponent} />
+          <Route path="/login" component={LoginComponent} />
+          <Route path="/register" component={RegisterComponent} />
+          <Route path="/shop" component={ProductlistComponent} />
+          <Route path="/product/:id" component={ProductComponent} />
       </Switch>
       <FooterComponent/>
       </Router>
