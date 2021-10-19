@@ -1,6 +1,8 @@
 function FooterComponent () {
     return (
-      <h1>Footer Works</h1>
+      <div className="position-fixed">
+        <h1>Footer Works</h1>
+      </div>
     )
 }
 
