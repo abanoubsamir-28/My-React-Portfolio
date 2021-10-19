@@ -24,7 +24,7 @@ function ProductComponent(match) {
               <p className="py-4 w-75">{product.description}</p>
                <TextRating rate={product.rating.rate}></TextRating> 
                <span>By {product.rating.count} User</span> 
-               <h4 className="my-5">Prdocut Price : {product.price + " EGP"}</h4>
+               <h4 className="my-5">Prdocut Price : {Math.ceil(product.price) + " EGP"}</h4>
             </div>
             <figure className="w-25">
               <img src={product.image} className="w-100 my-5" />
