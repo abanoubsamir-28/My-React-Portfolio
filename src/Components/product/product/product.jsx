@@ -16,7 +16,7 @@ function ProductComponent(match) {
   return (
     <div className="d-flex justify-content-center">
       {product ? (
-        <section className="product m-3 vh-50 bg-dark">
+        <section className="product m-3 vh-50 bg-dark text-white">
           <div className="container d-flex">
             <div className="product__text w-75 p-3">
               <h2 className="my-4">{product.title}</h2>
