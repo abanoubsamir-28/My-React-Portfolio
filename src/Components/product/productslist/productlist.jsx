@@ -10,11 +10,14 @@ function ProductlistComponent() {
   }, []);
 
   return (
-      <div className="d-flex flex-wrap justify-content-center container">
+      <div className="d-flex flex-wrap justify-content-center container flex-column">
+        <h1 className="text-center py-5 text-capitalize fw-bold">Our Products</h1>
+        <div className="d-flex flex-wrap justify-content-center">
           {
         products.map(product=> {
             return (<ProductcardComponent productItem={product}></ProductcardComponent>)
         })}
+        </div>
       </div>
   )
       

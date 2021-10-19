@@ -1,8 +1,8 @@
 
-function ProductComponent () {
-    return (
-        <h1>Product Works</h1>
+function ProductComponent (match) {
+    console.log(match.params) ; 
+    return (    
+        <h1>hey</h1>
     )
 }
-
 export default ProductComponent ; 
