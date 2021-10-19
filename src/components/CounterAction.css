@@ -1,0 +1,9 @@
+button {
+    border: 1px solid rgba(0, 0, 0, 0.67);
+    outline: none;
+    margin: 10px;
+    padding: 10px 40px;
+    cursor: pointer;
+    background-color: transparent;
+    color: wheat;
+}
