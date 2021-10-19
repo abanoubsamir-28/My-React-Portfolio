@@ -35,7 +35,6 @@ function ProductlistComponent() {
           </div>
         </section>
       ) : (
-        // Wanna Ask About in Lab , why didn't Work ?
         <Spinner
           animation="border"
           role="status"
