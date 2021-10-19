@@ -4,11 +4,10 @@ function NavbarComponent () {
     return (
         <Navbar bg="dark" expand="lg">
         <Container >
-          <Navbar.Brand href="#home" className="text-white">
-              Shop App
+          <Navbar.Brand className="text-white">
+            <Link to="/" className="text-decoration-none text-white fw-bold">Shop App</Link>
           </Navbar.Brand>
-            <Nav className="ms-auto">
-              
+            <Nav className="ms-auto align-items-center">
               <Nav.Link>
                 <Link to ="/" className="text-decoration-none text-white">Home</Link>
               </Nav.Link>

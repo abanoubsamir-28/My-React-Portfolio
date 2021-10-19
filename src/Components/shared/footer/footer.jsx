@@ -1,9 +1,7 @@
-function FooterComponent () {
-    return (
-      <div className="position-fixed">
-        <h1>Footer Works</h1>
-      </div>
-    )
+function FooterComponent() {
+  return (
+    <></>
+  );
 }
 
-export default FooterComponent ; 
+export default FooterComponent;
