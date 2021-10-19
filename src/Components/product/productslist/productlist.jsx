@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ProductcardComponent from "../productcard/productcard";
 import { Spinner } from "react-bootstrap";
+import ControlledCarousel from "../carousel/carousel";
 
 function ProductlistComponent() {
   const [products, setProducts] = useState(null);
@@ -13,20 +14,25 @@ function ProductlistComponent() {
   return (
     <div className="d-flex justify-content-center">
       {products ? (
-        <div className="d-flex flex-wrap justify-content-center container flex-column">
-          <h1 className="text-center py-5 text-capitalize fw-bold text-black">
-            Our Products
-          </h1>
-          <div className="d-flex flex-wrap justify-content-center">
-            {products.map((product) => {
-              return (
-                <ProductcardComponent
-                  productItem={product}
-                ></ProductcardComponent>
-              );
-            })}
+        <section>
+          <div className="carousel my-5">
+            <ControlledCarousel
+              productsList={products}
+              className="position-static"
+            />
           </div>
-        </div>
+          <div className="d-flex flex-wrap justify-content-center container flex-column">
+            <div className="d-flex flex-wrap justify-content-center">
+              {products.map((product) => {
+                return (
+                  <ProductcardComponent
+                    productItem={product}
+                  ></ProductcardComponent>
+                );
+              })}
+            </div>
+          </div>
+        </section>
       ) : (
         // Wanna Ask About in Lab , why didn't Work ?
         <Spinner
