@@ -1,6 +1,11 @@
-const todooutputComponent = () => {
-  return <h1>Todooutput Component Works</h1>;
+import TodoitemComponent from "../todoitem/todoitem";
+
+const TodooutputComponent = () => {
+  return (
+    <div>
+    </div>
+  )
 };
 
 
-export default todooutputComponent ; 
+export default TodooutputComponent ; 

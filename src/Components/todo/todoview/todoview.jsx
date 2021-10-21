@@ -1,5 +1,13 @@
+import TodooutputComponent from "../todoinput/todooutput";
+import TodoinputComponent from "../todooutput/todoinput";
+
 const todoviewComponent = () => {
-  return <h1>Todo Component Works</h1>;
+  return (
+      <section>
+          <TodoinputComponent/>
+          <TodooutputComponent/>
+      </section>
+  )
 };
 
 export default todoviewComponent;
