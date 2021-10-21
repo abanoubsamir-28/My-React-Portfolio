@@ -14,7 +14,10 @@ function NavbarComponent() {
             Home
           </Link>
           <Link to="/shop" className="text-decoration-none text-white mx-3">
-            Products
+            Shop
+          </Link>
+          <Link to="/todo" className="text-decoration-none text-white mx-3">
+            Todo list
           </Link>
           <Link to="/login" className="text-decoration-none text-white mx-3">
             Login
