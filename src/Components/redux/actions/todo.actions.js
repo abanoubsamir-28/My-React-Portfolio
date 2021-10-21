@@ -1,7 +1,7 @@
-export default function addTodo(payload) {
-  console.log("Action Fired with data" , payload);
+export default function addTodo(title, content) {
   return {
     type: "ADD_TODO",
-    payload: payload,
+    title: title,
+    content: content,
   };
 }
