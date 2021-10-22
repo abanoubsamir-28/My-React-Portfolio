@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-
+import * as yup from "yup";
 function LoginComponent() {
   const formic = useFormik({
     initialValues: {
@@ -7,7 +7,14 @@ function LoginComponent() {
       password: "",
       rememberme: false,
     },
-    onSubmit: (values) => console.log(JSON.stringify(values,)),
+    onSubmit: (values) => console.log(values),
+    validationSchema: yup.object({
+      email: yup
+        .string()
+        .required("Should be Entered !!")
+        .email("Enter a Valid Mail !!"),
+      password: yup.string().required("Should be Entered !!"),
+    }),
   });
   return (
     <form
@@ -29,6 +36,11 @@ function LoginComponent() {
             value={formic.values.email}
             onChange={formic.handleChange}
           ></input>
+          {formic.errors.email && (
+            <div className="alert alert-danger py-1" role="alert">
+              {formic.errors.email}
+            </div>
+          )}
         </div>
 
         <div className="mb-3">
@@ -43,6 +55,11 @@ function LoginComponent() {
             value={formic.values.password}
             onChange={formic.handleChange}
           ></input>
+          {formic.errors.password && (
+            <div className="alert alert-danger py-1" role="alert">
+              {formic.errors.password}
+            </div>
+          )}
         </div>
 
         <div className="form-check">
@@ -64,7 +81,6 @@ function LoginComponent() {
         <button type="reset" className="btn btn-outline-danger px-5 my-3 mx-3">
           Reset
         </button>
-        <div className="h-100">{JSON.stringify(formic)}</div>
       </div>
     </form>
   );
