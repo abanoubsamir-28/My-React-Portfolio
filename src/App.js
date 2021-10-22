@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 // Project Components
 import NavbarComponent from "./Components/shared/navbar/navbar";
-import FooterComponent from "./Components/shared/footer/footer";
 import ProductlistComponent from "./Components/product/productslist/productlist";
 import ProductComponent from "./Components/product/product/product";
 import LoginComponent from "./Components/auth/login/login";
@@ -25,7 +24,6 @@ function App() {
         <Route path="/product/:id" component={ProductComponent} />
         <Route path="/todo" component={todoviewComponent} />
       </Switch>
-      <FooterComponent />
     </Router>
   );
 }
