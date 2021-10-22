@@ -1,5 +1,6 @@
-import { Form, Formik, FieldArray, Field } from "formik";
-import TextfieldComponent from "./textfield.jsx";
+import { Form, Formik, Field } from "formik";
+import FieldComponent from "./textfield.jsx";
+import DyanmicformComponent from "./dynamicform";
 
 import * as yup from "yup";
 import FooterComponent from "../../shared/footer/footer.jsx";
@@ -25,6 +26,7 @@ function RegisterComponent() {
       .string()
       .oneOf([yup.ref("password"), null], "Password must match")
       .required("Confirm your password !"),
+    gender: yup.string().required("Gender is Required"),
   });
   return (
     <div>
@@ -34,83 +36,58 @@ function RegisterComponent() {
           email: "",
           password: "",
           confirmpassword: "",
+          active: false,
           hobbies: [""],
+          gender: "",
         }}
         validationSchema={validators}
         onSubmit={(values) => console.log(values)}
       >
         {(formik) => (
-          <div className="container my-4">
+          <div className="container my-4 w-50">
+            {console.log(formik)}
             <h1>Register</h1>
             <Form>
-              <TextfieldComponent
-                label="User Name"
-                name="username"
-                type="text"
-              />
-              <TextfieldComponent label="E-mail" name="email" type="email" />
-              <TextfieldComponent
+              <FieldComponent label="User Name" name="username" type="text" />
+              <FieldComponent label="E-mail" name="email" type="email" />
+              <FieldComponent
                 label="Password"
                 name="password"
                 type="password"
               />
-              <TextfieldComponent
+              <FieldComponent
                 label="Confirm Password"
                 name="confirmpassword"
                 type="password"
               />
-
-              <div className="form-group">
-                <label htmlFor="hobbies">My hobbies</label>
-                <FieldArray name="hobbies">
-                  {(fieldArrayProps) => {
-                    console.log(fieldArrayProps, "Field Array");
-                    const { push, remove, form } = fieldArrayProps;
-                    const { values } = form;
-                    const { hobbies } = values;
-                    return (
-                      <div>
-                        {hobbies.map((hobby, index) => (
-                          <div key={index}>
-                            <Field
-                              name={`hobbies[${index}]`}
-                              className="form-control w-50 d-inline my-2"
-                            ></Field>
-
-                            <button
-                              onClick={() => push("")}
-                              className="btn btn-primary px-5 mx-1 "
-                              style={
-                                hobby.toString().length === 0
-                                  ? {
-                                      pointerEvents: "none",
-                                      cursor: "not-allowed",
-                                    }
-                                  : {
-                                      pointerEvents: "auto",
-                                      cursor: "pointer",
-                                    }
-                              }
-                            >
-                              Add
-                            </button>
-                            {index > 0 && (
-                              <button
-                                onClick={() => remove(index)}
-                                className="btn btn-danger px-5 mx-1"
-                              >
-                                Remove
-                              </button>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    );
-                  }}
-                </FieldArray>
+              <div className="form-check">
+                <Field
+                  name="active"
+                  className="form-check-input"
+                  type="checkbox"
+                  id="gridCheck"
+                />
+                <label className="form-check-label" htmlFor="gridCheck">
+                  Active ?
+                </label>
               </div>
+              <Field
+                name="gender"
+                as="select"
+                multiple={false}
+                className="form-control"
+              >
+                <option value="">Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </Field>
+              {formik.errors.gender && <div>{formik.errors.gender}</div>}
 
-              <button className="btn btn-primary px-5 my-2">Register</button>
+              <DyanmicformComponent name="hobbies" label="My Hobbies" />
+
+              <button className="btn btn-primary px-5 my-2" type="submit">
+                Register
+              </button>
               <button
                 className="btn btn-outline-danger px-3 my-2 mx-3"
                 type="reset"
