@@ -6,12 +6,15 @@ function NavbarComponent() {
       <Container>
         <Navbar.Brand className="text-white">
           <Link to="/" className="text-decoration-none text-white fw-bold">
-            Shop App
+            React Portfolio
           </Link>
         </Navbar.Brand>
         <Nav className="ms-auto align-items-center">
           <Link to="/" className="text-decoration-none text-white mx-3">
-            Home
+            Who Am I ?
+          </Link>
+          <Link to="/counter" className="text-decoration-none text-white mx-3">
+            Simple Counter
           </Link>
           <Link to="/shop" className="text-decoration-none text-white mx-3">
             Shop

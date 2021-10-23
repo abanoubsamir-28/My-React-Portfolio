@@ -11,6 +11,7 @@ import LoginComponent from "./Components/auth/login/login";
 import RegisterComponent from "./Components/auth/register/register";
 import HomeComponent from "./Components/Home/home";
 import todoviewComponent from "./Components/todo/todoview/todoview";
+import CounterComponent from "./Components/counter/counter.jsx";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/shop" component={ProductlistComponent} />
         <Route path="/product/:id" component={ProductComponent} />
         <Route path="/todo" component={todoviewComponent} />
+        <Route path="/counter" component={CounterComponent} />
       </Switch>
     </Router>
   );

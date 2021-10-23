@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import TextRating from "../rating/rating";
-import "./product.css";
 
 function ProductComponent(match) {
   const producId = match.match.params.id;
@@ -10,7 +9,6 @@ function ProductComponent(match) {
     fetch(`https://fakestoreapi.com/products/${producId}`)
       .then((res) => res.json())
       .then((json) => setproduct(json));
-    
   });
 
   return (

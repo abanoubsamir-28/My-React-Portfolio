@@ -3,7 +3,7 @@ import FieldComponent from "./textfield.jsx";
 import DyanmicformComponent from "./dynamicform";
 
 import * as yup from "yup";
-import FooterComponent from "../../shared/footer/footer.jsx";
+
 function RegisterComponent() {
   const validators = yup.object({
     username: yup
@@ -99,7 +99,6 @@ function RegisterComponent() {
           </div>
         )}
       </Formik>
-      <FooterComponent className="fixed-bottom" />
     </div>
   );
 }
