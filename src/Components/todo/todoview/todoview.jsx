@@ -1,13 +1,13 @@
 import TodooutputComponent from "../todoinput/todooutput";
 import TodoinputComponent from "../todooutput/todoinput";
 
-const todoviewComponent = () => {
+const TodoviewComponent = () => {
   return (
-      <section>
-          <TodoinputComponent/>
-          <TodooutputComponent/>
-      </section>
-  )
+    <section>
+      <TodoinputComponent />
+      <TodooutputComponent />
+    </section>
+  );
 };
 
-export default todoviewComponent;
+export default TodoviewComponent;

@@ -9,7 +9,20 @@ const TodoinputComponent = () => {
   const dispatch = useDispatch();
 
   const sendData = () => {
-    dispatch(addTodo(title.current.value, content.current.value));
+    if (
+      title.current.value.length === 0 ||
+      content.current.value.length === 0
+    ) {
+      alert("Fill The Empty Fields!!");
+    } else {
+      const task = {
+        title: title.current.value,
+        content: content.current.value,
+      };
+      dispatch(addTodo(task));
+    }
+    title.current.value = "" ;
+    content.current.value = "" ;
   };
 
   return (

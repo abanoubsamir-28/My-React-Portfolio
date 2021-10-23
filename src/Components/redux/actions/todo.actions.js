@@ -1,7 +1,12 @@
-export default function addTodo(title, content) {
+export default function addTodo(payload) {
   return {
     type: "ADD_TODO",
-    title: title,
-    content: content,
+    payload,
+  };
+}
+export function remTodo(payload) {
+  return {
+    type: "REM_TODO",
+    payload,
   };
 }
