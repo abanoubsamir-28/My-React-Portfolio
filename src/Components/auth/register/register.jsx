@@ -45,7 +45,7 @@ function RegisterComponent() {
       >
         {(formik) => (
           <div className="container my-4 w-50">
-            {console.log(formik)}
+            {console.log(formik.touched.gender)}
             <h1>Register</h1>
             <Form>
               <FieldComponent label="User Name" name="username" type="text" />
@@ -81,7 +81,9 @@ function RegisterComponent() {
                 <option value="male">Male</option>
                 <option value="female">Female</option>
               </Field>
-              {formik.errors.gender && <div>{formik.errors.gender}</div>}
+              {formik.errors.gender && formik.touched.gender && (
+                <div>{formik.errors.gender}</div>
+              )}
 
               <DyanmicformComponent name="hobbies" label="My Hobbies" />
 
