@@ -45,7 +45,6 @@ function RegisterComponent() {
       >
         {(formik) => (
           <div className="container my-4 w-50">
-            {console.log(formik.touched.gender)}
             <h1>Register</h1>
             <Form>
               <FieldComponent label="User Name" name="username" type="text" />
